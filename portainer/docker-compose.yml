@@ -4,14 +4,14 @@ volumes:
   data:
 
 networks:
-  dmz:
+  traefik_default:
     external: true
 
 services:
   portainer:
     image: portainer/portainer-ce
     networks:
-      - dmz
+      - traefik_default
     labels:
       - traefik.enable=true
       - traefik.http.routers.portainer.rule=Host(`portainer.lolcathost.io`)

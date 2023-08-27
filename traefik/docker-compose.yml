@@ -3,15 +3,9 @@ version: '3'
 volumes:
   data:
 
-networks:
-  dmz:
-    external: true
-
 services:
   reverse-proxy:
     image: traefik
-    networks:
-      - dmz
     command:
       - --api.insecure=true 
       - --providers.docker=true
