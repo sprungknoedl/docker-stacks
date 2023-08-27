@@ -27,6 +27,7 @@ services:
       - DNSSEC=true
       - TZ=Europe/Vienna
       - VIRTUAL_HOST=pihole.lolcathost.io
+      - WEBPASSWORD=${WEBPASSWORD}
     volumes:
       - pihole:/etc/pihole
       - dnsmasq:/etc/dnsmasq.d
