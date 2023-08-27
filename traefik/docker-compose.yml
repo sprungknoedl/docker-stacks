@@ -6,6 +6,7 @@ volumes:
 services:
   reverse-proxy:
     image: traefik
+    restart: always
     command:
       - --api.insecure=true 
       - --providers.docker=true

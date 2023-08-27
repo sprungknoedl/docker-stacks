@@ -10,6 +10,7 @@ networks:
 services:
   portainer:
     image: portainer/portainer-ce
+    restart: always
     networks:
       - traefik_default
     labels:
