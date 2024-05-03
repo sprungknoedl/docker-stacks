@@ -21,6 +21,7 @@ services:
       - --certificatesresolvers.myresolver.acme.dnschallenge.provider=namecheap
       - --certificatesresolvers.myresolver.acme.dnschallenge.resolvers=9.9.9.9:53,8.8.8.8:53
       - --pilot.token=${TRAEFIK_PILOT_TOKEN}
+      - --serversTransport.insecureSkipVerify=true
     labels:
       - traefik.enable=true
       - traefik.http.routers.traefik.rule=Host(`traefik.lolcathost.io`)
