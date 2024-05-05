@@ -1,0 +1,18 @@
+version: '3'
+
+networks:
+  traefik_default:
+    external: true
+
+services:
+  tools:
+    image: corentinth/it-tools
+    restart: unless-stopped
+    networks:
+      - traefik_default
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.ittools.rule=Host(`tools.lolcathost.io`)
+      - traefik.http.routers.ittools.tls=true
+      - traefik.http.routers.ittools.tls.certresolver=myresolver
+  
